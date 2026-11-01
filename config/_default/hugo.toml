@@ -2,6 +2,7 @@ baseURL = "https://www.m-weilinger.de/"
 locale = "en"
 title = "Matthias Weilinger"
 theme = "mw"
+enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 
 [params]

@@ -235,3 +235,4 @@ main { padding-block: 3rem 4rem; }
 @media (prefers-reduced-motion: reduce) { .wave { animation: none; } }
 
 .prose [data-demo] { margin-bottom: 1.75rem; }
+.writing-label { margin-bottom: 1rem; }
