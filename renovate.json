@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    ":timezone(Europe/Berlin)",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "labels": ["renovate/{{updateType}}"],
+  "packageRules": [
+    {
+      "description": "Automerge non-major updates once the image build on the PR passes",
+      "matchUpdateTypes": ["minor", "patch", "digest", "pinDigest"],
+      "automerge": true,
+      "automergeType": "pr"
+    }
+  ]
+}
