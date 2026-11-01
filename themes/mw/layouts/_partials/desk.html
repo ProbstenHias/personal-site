@@ -1,0 +1,5 @@
+<dl class="desk">
+  {{ range hugo.Data.desk }}
+  <div class="desk-row"><dt>{{ .label }}</dt><dd><span>{{ .value }}</span><small>{{ .note }}</small></dd></div>
+  {{ end }}
+</dl>

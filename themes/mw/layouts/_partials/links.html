@@ -1,0 +1,5 @@
+<ul class="links">
+  {{ range hugo.Data.links }}
+  <li><a href="{{ .url }}"{{ if hasPrefix .url "http" }} rel="me"{{ end }}><span>{{ .name }}</span><small>{{ .handle }}</small><i aria-hidden="true">↗</i></a></li>
+  {{ end }}
+</ul>

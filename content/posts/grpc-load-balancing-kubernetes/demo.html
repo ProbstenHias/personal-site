@@ -1,0 +1,65 @@
+<div class="lb-toy" data-lb>
+  <div class="lb-controls">
+    <div class="mode" role="group" aria-label="Load balancing mode">
+      <button type="button" data-mode="l4" aria-pressed="true">kube-proxy · L4</button>
+      <button type="button" data-mode="l7" aria-pressed="false">Istio · L7</button>
+    </div>
+    <span class="lb-caption" data-lb-caption aria-live="polite">One HTTP/2 connection. Every request goes to the same pod.</span>
+  </div>
+  <svg class="lb" viewBox="0 0 560 248" role="img" aria-label="A client sends gRPC requests to four pods">
+    <title>A client sends gRPC requests to four pods</title>
+    <desc data-lb-desc>Request counts per pod are listed below the diagram.</desc>
+    <g class="client"><rect x="0.5" y="100.5" width="104" height="47" rx="6"/><text x="14" y="121">client</text><text class="sub" x="14" y="136">gRPC · HTTP/2</text></g>
+    <g class="proxy"><rect x="196.5" y="88.5" width="140" height="71" rx="6"/><text x="210" y="118" data-lb-proxy>kube-proxy</text><text class="sub" x="210" y="133" data-lb-proxy-sub>picks per connection</text></g>
+    
+      
+      <path class="wire" d="M104.5 124 C 170 124, 170 124, 196.5 124 M336.5 124 C 385 124, 385 28, 430.5 28"/>
+      <path class="conn" data-conn="0" d="M104.5 124 L196.5 124 M336.5 124 C 385 124, 385 28, 430.5 28"/>
+      <path data-route="0" d="M104.5 124 L336.5 124 C 385 124, 385 28, 430.5 28" fill="none" stroke="none"/>
+      <g class="pod" data-pod="0">
+        <rect x="430.5" y="4.5" width="129" height="47" rx="6"/>
+        <text x="443" y="24">pod-a</text>
+        <rect class="bar-bg" x="443" y="36" width="64" height="3" rx="1.5"/>
+        <rect class="bar" data-bar x="443" y="36" width="0" height="3" rx="1.5"/>
+        <text class="count" data-count x="547" y="34" text-anchor="end">0</text>
+      </g>
+    
+      
+      <path class="wire" d="M104.5 124 C 170 124, 170 124, 196.5 124 M336.5 124 C 385 124, 385 90, 430.5 90"/>
+      <path class="conn" data-conn="1" d="M104.5 124 L196.5 124 M336.5 124 C 385 124, 385 90, 430.5 90"/>
+      <path data-route="1" d="M104.5 124 L336.5 124 C 385 124, 385 90, 430.5 90" fill="none" stroke="none"/>
+      <g class="pod" data-pod="1">
+        <rect x="430.5" y="66.5" width="129" height="47" rx="6"/>
+        <text x="443" y="86">pod-b</text>
+        <rect class="bar-bg" x="443" y="98" width="64" height="3" rx="1.5"/>
+        <rect class="bar" data-bar x="443" y="98" width="0" height="3" rx="1.5"/>
+        <text class="count" data-count x="547" y="96" text-anchor="end">0</text>
+      </g>
+    
+      
+      <path class="wire" d="M104.5 124 C 170 124, 170 124, 196.5 124 M336.5 124 C 385 124, 385 152, 430.5 152"/>
+      <path class="conn" data-conn="2" d="M104.5 124 L196.5 124 M336.5 124 C 385 124, 385 152, 430.5 152"/>
+      <path data-route="2" d="M104.5 124 L336.5 124 C 385 124, 385 152, 430.5 152" fill="none" stroke="none"/>
+      <g class="pod" data-pod="2">
+        <rect x="430.5" y="128.5" width="129" height="47" rx="6"/>
+        <text x="443" y="148">pod-c</text>
+        <rect class="bar-bg" x="443" y="160" width="64" height="3" rx="1.5"/>
+        <rect class="bar" data-bar x="443" y="160" width="0" height="3" rx="1.5"/>
+        <text class="count" data-count x="547" y="158" text-anchor="end">0</text>
+      </g>
+    
+      
+      <path class="wire" d="M104.5 124 C 170 124, 170 124, 196.5 124 M336.5 124 C 385 124, 385 214, 430.5 214"/>
+      <path class="conn" data-conn="3" d="M104.5 124 L196.5 124 M336.5 124 C 385 124, 385 214, 430.5 214"/>
+      <path data-route="3" d="M104.5 124 L336.5 124 C 385 124, 385 214, 430.5 214" fill="none" stroke="none"/>
+      <g class="pod" data-pod="3">
+        <rect x="430.5" y="190.5" width="129" height="47" rx="6"/>
+        <text x="443" y="210">pod-d</text>
+        <rect class="bar-bg" x="443" y="222" width="64" height="3" rx="1.5"/>
+        <rect class="bar" data-bar x="443" y="222" width="0" height="3" rx="1.5"/>
+        <text class="count" data-count x="547" y="220" text-anchor="end">0</text>
+      </g>
+    
+    <g data-dots></g>
+  </svg>
+  <ul class="visually-hidden" data-lb-list aria-live="off"><li>pod-a: 0 requests</li><li>pod-b: 0 requests</li><li>pod-c: 0 requests</li><li>pod-d: 0 requests</li></ul></div>

@@ -1,0 +1,4 @@
+<footer class="colophon wrap">
+  <span>© {{ now.Year }} Matthias Weilinger</span>
+  <span>{{ block "footer-note" . }}{{ range $i, $l := hugo.Data.links }}{{ if $i }} · {{ end }}<a href="{{ $l.url }}">{{ $l.name }}</a>{{ end }}{{ end }}</span>
+</footer>

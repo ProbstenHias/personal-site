@@ -1,0 +1,11 @@
+{{/* Dated one-line list grouped by year. Dates sit in a fixed mono column like a watch scale. */}}
+{{ range .GroupByDate "2006" }}
+<section class="year">
+  <h3 class="year-label"><span>{{ .Key }}</span></h3>
+  <ol class="posts">
+    {{ range .Pages }}
+    <li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan" }}</time><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ol>
+</section>
+{{ end }}

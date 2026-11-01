@@ -1,0 +1,43 @@
+{{ define "bodyclass" }}home{{ end }}
+{{ define "main" }}
+<section class="intro">
+  <h1>{{ site.Params.intro }} <span class="wave" aria-hidden="true">👋</span></h1>
+  <p>{{ site.Params.description }}</p>
+</section>
+
+<section aria-label="On the desk">
+  <dl class="strip">
+    {{ range hugo.Data.desk }}
+    <div class="desk-row"><dt>{{ .label }}</dt><dd><span>{{ .value }}</span><small>{{ .note }}</small></dd></div>
+    {{ end }}
+  </dl>
+</section>
+
+{{ $demo := false }}
+{{ $featured := false }}
+{{ range site.RegularPages.ByDate.Reverse }}
+  {{ if .Resources.GetMatch "demo.html" }}
+    {{ if not $demo }}{{ $demo = . }}{{ end }}
+    {{ if and .Params.featured_demo (not $featured) }}{{ $featured = . }}{{ end }}
+  {{ end }}
+{{ end }}
+{{ with (or $featured $demo) }}
+<section class="learned" aria-labelledby="learned-title">
+  <div>
+    <p class="label">I recently learned</p>
+    <h2 id="learned-title">{{ .Title }}</h2>
+    <p>{{ .Summary | plainify }}</p>
+    <a class="more" href="{{ .RelPermalink }}">Read the post →</a>
+  </div>
+  {{ partial "demo.html" . }}
+</section>
+{{ end }}
+
+<div class="home-rest">
+  <section aria-labelledby="writing-title">
+    <h2 id="writing-title" class="label" style="margin-bottom:1rem">Writing</h2>
+    {{ partial "post-list.html" (where site.RegularPages "Section" "posts") }}
+  </section>
+  {{ partial "links.html" . }}
+</div>
+{{ end }}

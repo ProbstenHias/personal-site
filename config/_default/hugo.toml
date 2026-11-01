@@ -1,0 +1,34 @@
+baseURL = "https://www.m-weilinger.de/"
+locale = "en"
+title = "Matthias Weilinger"
+theme = "mw"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  author = "Matthias Weilinger"
+  description = "Platform engineer. I write down what I learn."
+  intro = "Hi, I'm Matthias."
+
+[menus]
+  [[menus.main]]
+    name = "Writing"
+    pageRef = "/posts"
+    weight = 10
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 20
+
+[markup.highlight]
+  noClasses = false
+  codeFences = true
+  guessSyntax = false
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[permalinks]
+  posts = "/posts/:contentbasename/"
+
+[security]
+  allowContent = ["text/markdown", "text/html"]

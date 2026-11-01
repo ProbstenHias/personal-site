@@ -1,0 +1,7 @@
+<header class="masthead wrap">
+  <a class="brand" href="/">Matthias Weilinger</a>
+  <nav aria-label="Main">
+    {{ range site.Menus.main }}<a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a>{{ end }}
+    {{ partial "theme-toggle.html" . }}
+  </nav>
+</header>

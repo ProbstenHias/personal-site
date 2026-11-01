@@ -1,20 +1,6 @@
-# Hugo build output
 public/
 resources/_gen/
-
-# Hugo lock file
 .hugo_build.lock
-
-# OS files
 .DS_Store
-Thumbs.db
-
-# Editor files
-*.swp
-*.swo
-*~
-.idea/
-.vscode/
-
-# Environment files
-.env
+.mockups/
+.playwright-mcp/

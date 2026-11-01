@@ -1,0 +1,10 @@
+# "On the desk": what is in hand right now. Ordered, one line each.
+- label: Reading
+  value: "Sum: Forty Tales from the Afterlives"
+  note: "David Eagleman"
+- label: Building
+  value: "A homelab in two places"
+  note: "Talos at home · OKE ARM in the cloud · one Flux repo"
+- label: Perfecting
+  value: "The perfect cup of coffee"
+  note: "Not there yet"

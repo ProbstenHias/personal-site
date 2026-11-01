@@ -1,0 +1,15 @@
+{{ with .Resources.GetMatch "demo.html" }}
+<div data-demo="{{ $.File.ContentBaseName }}">
+  {{ .Content | safeHTML }}
+</div>
+{{ end }}
+{{ with .Resources.GetMatch "demo.css" }}
+{{ with . | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+{{ end }}
+{{ end }}
+{{ with .Resources.GetMatch "demo.js" }}
+{{ with . | fingerprint }}
+<script defer src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
+{{ end }}
+{{ end }}

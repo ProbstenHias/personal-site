@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article class="about">
+  <header class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.tldr }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
+  <div class="prose">{{ .Content }}</div>
+  <section class="row">
+    <h2 class="label">Timeline</h2>
+    <ol class="timeline">
+      {{ range .Params.timeline }}
+      <li><span class="years">{{ .years }}</span><div><strong>{{ .role }}</strong><p>{{ .note }}</p></div></li>
+      {{ end }}
+    </ol>
+  </section>
+  <section class="row">
+    <h2 class="label">Off the keyboard</h2>
+    <dl class="desk">
+      {{ range .Params.hobbies }}<div class="desk-row"><dt>{{ .name }}</dt><dd><span>{{ .note }}</span></dd></div>{{ end }}
+    </dl>
+  </section>
+</article>
+{{ end }}

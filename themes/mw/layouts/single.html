@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article class="post">
+  <header class="post-head">
+    <p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time><span>{{ .ReadingTime }} min</span></p>
+    <h1>{{ .Title }}</h1>
+    {{ partial "tldr.html" . }}
+  </header>
+  <div class="prose">{{ .Content }}</div>
+  <nav class="post-nav" aria-label="More writing">
+    {{ with .PrevInSection }}<a href="{{ .RelPermalink }}"><small>Newer</small>{{ .Title }}</a>{{ else }}<span></span>{{ end }}
+    {{ with .NextInSection }}<a class="older" href="{{ .RelPermalink }}"><small>Older</small>{{ .Title }}</a>{{ end }}
+  </nav>
+</article>
+{{ end }}
