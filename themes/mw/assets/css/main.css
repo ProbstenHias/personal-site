@@ -112,27 +112,6 @@ main { padding-block: 3rem 4rem; }
 .learned p { margin: .9rem 0 0; color: var(--muted); font-size: .9375rem; }
 .learned .more { display: inline-block; margin-top: 1.25rem; font-size: .9375rem; text-decoration-color: var(--accent); }
 
-.lb-controls { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
-.mode { display: inline-flex; padding: 3px; background: var(--bg); border: 1px solid var(--line); border-radius: 999px; }
-.mode button { all: unset; cursor: pointer; padding: .4rem .9rem; border-radius: 999px; font: 500 .8125rem/1 var(--sans); color: var(--muted); transition: background .25s, color .25s; }
-.mode button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
-.mode button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.lb-caption { font: .75rem var(--mono); color: var(--muted); }
-
-.lb { display: block; width: 100%; height: auto; overflow: visible; }
-.lb .client rect, .lb .pod > rect:first-of-type { fill: var(--bg); stroke: var(--line); }
-.lb .proxy rect { fill: none; stroke: var(--line); stroke-dasharray: 2 3; }
-.lb text { font: 500 11px var(--mono); fill: var(--text); }
-.lb text.sub { font-weight: 400; fill: var(--muted); font-size: 9.5px; }
-.lb .count { font: 500 18px var(--sans); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
-.lb .wire { stroke: var(--line); fill: none; stroke-width: 1; }
-.lb .conn { stroke: var(--text); stroke-width: 1.5; fill: none; opacity: 0; transition: opacity .3s; }
-.lb .conn.on { opacity: 1; }
-.lb .bar-bg { fill: var(--line); }
-.lb .bar { fill: var(--text); transition: width .3s; }
-.lb .pod.hot .bar { fill: var(--accent); }
-.lb .dot { fill: var(--accent); }
-
 .home-rest { display: grid; grid-template-columns: var(--label) minmax(0, var(--measure)); gap: 0 var(--gap); }
 .home-rest > * { grid-column: 2; }
 .home-rest .links { margin-top: 3.5rem; }
@@ -180,7 +159,7 @@ main { padding-block: 3rem 4rem; }
 
 .prose > :first-child { margin-top: 0; }
 .prose h2 { margin: 2.75rem 0 .75rem; font-size: 1.25rem; font-weight: 600; letter-spacing: -.015em; }
-.prose p, .prose ul, .prose ol { margin: 0 0 1.15rem; }
+.prose p, .prose ul, .prose ol { margin: 0 0 .4rem; }
 .prose li + li { margin-top: .35rem; }
 .prose li::marker { color: var(--muted); font-family: var(--mono); font-size: .875em; }
 .prose strong { font-weight: 600; }
@@ -254,3 +233,5 @@ main { padding-block: 3rem 4rem; }
 .wave { display: inline-block; color: transparent; text-shadow: 0 0 0 var(--accent); transform-origin: 70% 80%; animation: wave 1.6s ease-in-out .4s 1; }
 @keyframes wave { 0%, 60%, 100% { transform: rotate(0); } 10%, 30% { transform: rotate(14deg); } 20%, 40% { transform: rotate(-8deg); } 50% { transform: rotate(10deg); } }
 @media (prefers-reduced-motion: reduce) { .wave { animation: none; } }
+
+.prose [data-demo] { margin-bottom: 1.75rem; }
