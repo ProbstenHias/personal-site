@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM ghcr.io/gohugoio/hugo:v0.169.0 AS build
+FROM --platform=$BUILDPLATFORM ghcr.io/gohugoio/hugo:v0.170.0 AS build
 USER root
 WORKDIR /src
 COPY . .
